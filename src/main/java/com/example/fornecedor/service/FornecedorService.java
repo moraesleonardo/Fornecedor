@@ -29,6 +29,16 @@ public class FornecedorService {
     public Mono<Void> deleteById(Long id){
         return fornecedorRepository.deleteById(id);
     }
+    public Mono<Fornecedor> update(Long id, Fornecedor fornecedor) {
+        return fornecedorRepository.findById(id)
+                .flatMap(existingFornecedor -> {
+                    fornecedor.setId(existingFornecedor.getId());
+                    return fornecedorRepository.save(fornecedor);
+                });
+    }
+
+
+
 
 }
 
