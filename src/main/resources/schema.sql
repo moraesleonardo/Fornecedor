@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS fornecedores (
+
+    id INTEGER PRIMARY KEY,
+    nome VARCHAR(30) NOT NULL,
+    carro VARCHAR(30) NOT NULL
+);
